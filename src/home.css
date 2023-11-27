@@ -265,7 +265,7 @@
 .full-screen{
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 95vh;
 }
 
 .full-info{
@@ -301,13 +301,8 @@
     top: 0;
 }
 
-.filmsPage{
-    height: 400vh;
-}
-
 .film-list{
     position: relative;
-    top: -10vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
@@ -408,10 +403,6 @@
 
 @media (max-width: 1892px)
 {
-    .filmsPage{
-        height: 680vh;
-    }
-
     .film-list{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -423,10 +414,6 @@
 
 @media (max-width: 1758px)
 {
-    .filmsPage{
-        height: 660vh;
-    }
-
     .card{
         width: 520px;
     }
@@ -434,10 +421,6 @@
 
 @media (max-width: 1634px)
 {
-    .filmsPage{
-        height: 650vh;
-    }
-
     .card{
         width: 480px;
     }
@@ -446,10 +429,6 @@
 /* McBook Pro Medias */
 @media (max-width: 1492px)
 {
-    .filmsPage{
-        height: 630vh;
-    }
-
     .card{
         width: 430px;
     }
@@ -457,10 +436,6 @@
 
 @media (max-width: 1380px)
 {
-    .filmsPage{
-        height: 920vh;
-    }
-
     .film-list{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -472,10 +447,6 @@
 
 @media (max-width: 1246px)
 {
-    .filmsPage{
-        height: 740vh;
-    }
-
     .card{
         width: 520px;
     }
@@ -501,10 +472,6 @@
         margin: 20% auto 40%;
     }
 
-    .filmsPage{
-        height: 720vh;
-    }
-
     .card{
         width: 450px;
     }
@@ -524,10 +491,6 @@
 
     .signin{
         margin: 20% auto 10%;
-    }
-
-    .filmsPage{
-        height: 1420vh;
     }
 
     .film-list{
@@ -575,10 +538,6 @@
 
     .form-container form label{
         width: 140%;
-    }
-
-    .filmsPage{
-        height: 1220vh;
     }
 
     .card{

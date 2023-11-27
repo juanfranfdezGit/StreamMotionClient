@@ -32,7 +32,7 @@ import playico from "../assets/playico.png"
 // Function
 export default function Films() {
     return (
-        <div className="container filmsPage">
+        <div className="container">
             {/* Navbar with close session button */}
             <Navbar2/>
 
