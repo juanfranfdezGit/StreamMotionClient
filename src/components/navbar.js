@@ -8,7 +8,7 @@ export default function Navbar() {
    const navigate = useNavigate();
 
     // Navigation Functions
-    function SingIn() {
+    function SignIn() {
         navigate("/signin")
     }
 
@@ -19,7 +19,7 @@ export default function Navbar() {
     return(
         <div className="navbar-container">
             <h1 className="logo-navbar" onClick={Start}>StreamMotion</h1>
-            <button className="btn" onClick={SingIn}>Iniciar Sesión</button>
+            <button className="btn" onClick={SignIn}>Iniciar Sesión</button>
         </div>
     )
 }

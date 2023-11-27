@@ -19,7 +19,7 @@ export default function Navbar() {
     return(
         <div className="navbar-container">
             <h1 className="logo-navbar" onClick={Start}>StreamMotion</h1>
-            <button className="btn" onClick={SingOut}>Iniciar Sesión</button>
+            <button className="btn" onClick={SingOut}>Cerrar Sesión</button>
         </div>
     )
 }
