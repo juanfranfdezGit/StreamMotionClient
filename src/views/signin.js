@@ -12,7 +12,7 @@ export default function Signup() {
    const navigate = useNavigate();
 
     function signin() {
-        navigate("/signin")
+        navigate("/films")
     }
 
     return (
