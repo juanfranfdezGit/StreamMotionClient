@@ -8,6 +8,9 @@ import Footer from "../components/footer"
 
 // Function
 export default function Signup() {
+   // useNavigate Call
+   const navigate = useNavigate();
+
     function signin() {
         navigate("/signin")
     }
