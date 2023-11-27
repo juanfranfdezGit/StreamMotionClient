@@ -35,18 +35,26 @@ export default function Home() {
 
                <div className="divider"></div>
 
-               <div className="first-section">
-                  <img src={section01back} alt="mockups"></img>
-                  <h1>Desde cualquer dispositivo</h1>
-                  <p>Disponible en móvil, tablet, pc o televisión.</p>
+               <div className="sections">
+                  <div>
+                     <img src={section01back} alt="mockups"></img>
+                  </div>
+                  <div className="text">
+                     <h1>Desde cualquer dispositivo</h1>
+                     <p>Disponible en móvil, tablet, pc o televisión.</p>
+                  </div>
                </div>
 
                <div className="divider"></div>
 
-               <div className="second-section">
-                  <img src={infantil} alt="infantil"></img>
-                  <h1>Perfiles Infantiles</h1>
-                  <p>Espacio dedicado para que los más peques disfruten con sus personajes favoritos.</p>
+               <div className="sections">
+                  <div className="text">
+                     <h1>Perfiles Infantiles</h1>
+                     <p>Espacio dedicado para que los más peques disfruten con sus personajes favoritos.</p>
+                  </div>
+                  <div>
+                     <img src={infantil} alt="infantil"></img>
+                  </div>
                </div>
 
                <div className="divider"></div>

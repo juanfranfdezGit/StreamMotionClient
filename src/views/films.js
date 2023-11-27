@@ -39,18 +39,24 @@ export default function Films() {
             {/* Trailer */}
             <div className="full-screen">
                 <div className="full-info">
-                    <div className="full-title">
-                        <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full"/>
+                    <div>
+                        <div className="full-title">
+                            <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full"/>
+                        </div>
+                        <p>En tiempos de guerra, el brillante físico estadounidense Julius Robert Oppenheimer, al frente del 'Proyecto Manhattan', lidera los ensayos nucleares para construir la bomba atómica para su país.</p>
                     </div>
-                    <p>En tiempos de guerra, el brillante físico estadounidense Julius Robert Oppenheimer, al frente del 'Proyecto Manhattan', lidera los ensayos nucleares para construir la bomba atómica para su país.</p>
                 </div>
-                <ReactPlayer url={trailer1} playing="true" muted="true" loop width="100vw" height="110vh"/>
+                <div className="player">
+                    <ReactPlayer url={trailer1} playing="true" muted="true" loop width="100vw" height="115vh"/>
+                </div>
             </div>
 
             {/* Cards */}
             <div className="film-list">
                 <div className="card">
-                    <img src={esdla1} alt="esdla" className="filmimg"/>
+                    <div className="filmimg">
+                        <img src={esdla1} alt="esdla"/>
+                    </div>
                     <div className="tags">
                         <li>
                             <ul>Fantasía</ul>
@@ -69,7 +75,9 @@ export default function Films() {
                 </div>
 
                 <div className="card">
-                    <img src={esdla2} alt="esdla" className="filmimg"/>
+                    <div className="filmimg">
+                        <img src={esdla2} alt="esdla"/>
+                    </div>
                     <div className="tags">
                         <li>
                             <ul>Fantasía</ul>
