@@ -85,6 +85,10 @@
         text-shadow: 0 0 10px #eeeeee;
     }
 
+    .btn-edit{
+        margin-bottom: 32px;
+    }
+
     /* Navbar Styles */
     .navbar-container{
         display: flex;
@@ -100,6 +104,12 @@
         z-index: 100;
     }
 
+    .navbar-container div{
+        display: flex;
+        align-items: center;
+        gap: 60px;
+    }
+
     .logo-navbar{
         color: var(--main-color);
         font-family: LogoTitle;
@@ -110,6 +120,54 @@
     .logo-navbar:hover{
         cursor: pointer;
         color: var(--Neutrals100-color);
+    }
+
+    .prof1{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        background: url(./assets/prof1.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .prof2{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        background: url(./assets/prof2.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .prof3{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        background: url(./assets/prof3.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .prof4{
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--main-color);
+        background: url(./assets/prof4.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    .prof1:hover, .prof2:hover, .prof3:hover, .prof4:hover{
+        cursor: pointer;
     }
 
     /* Footer Styles */
@@ -185,36 +243,61 @@
     }
 
     /* First Section Styles */
-    .sections{
+    .first-section{
         width: 100%;
         height: 100vh;
         position: relative;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
     }
 
-    .sections div{
-        height: 100%;
-    }
-
-    .sections img{
-        width: 100%;
-        height: 100%;
+    .first-section img{
+        width: 2100px;
+        height: 1100px;
         filter: drop-shadow(0 5px 10px #292929);
     }
 
-    .text{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .text h1{
+    .first-section h1{
+        position: absolute;
+        width: 650px;
+        top: 42%;
+        left: 60%;
         font-size: 3rem;
     }
 
-    .text p{
+    .first-section p{
+        position: absolute;
+        width: 650px;
+        top: 50%;
+        left: 60%;
+        font-size: 1.7rem;
+    }
+
+    /* Second Section Styles */
+    .second-section{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+
+    .second-section img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 1950px;
+        filter: drop-shadow(0 0 25px #292929);
+    }
+
+    .second-section h1{
+        position: absolute;
+        top: 40%;
+        left: 4%;
+        font-size: 3rem;
+    }
+
+    .second-section p{
+        position: absolute;
+        width: 750px;
+        top: 50%;
+        left: 4%;
         font-size: 1.7rem;
     }
 
@@ -222,9 +305,15 @@
 /* Forms Styles */
 /* ------------------------------------------------- */
 /* ------------------------------------------------- */
+    .container
+    {
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+    }
+
     .form-container{
         width: 80%;
-        height:50vh;
         background: var(--Neutrals500-color);
         margin: 10% auto 4%;
         padding: 80px;
@@ -247,14 +336,66 @@
         font-weight: 700;
         border-radius: 24px;
         text-align: center;
+        border: 3px solid var(--Neutrals800-color);
     }
 
     .form-container form label{
         margin-bottom: 20px;
     }
 
-    .signin{
-        margin: 10% auto 7%;
+    .radios{
+        display: flex;
+        gap: 60px;
+        margin-top: 40px;
+    }
+
+    .profImgs{
+        width: 250px !important;
+        height: 250px;
+    }
+
+    .profImgs:first-child{
+        background: url(./assets/prof1.png);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .profImgs:nth-child(2){
+        background: url(./assets/prof2.png);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .profImgs:nth-child(3){
+        background: url(./assets/prof3.png);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .profImgs:nth-child(4){
+        background: url(./assets/prof4.png);
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .profImgs:hover{
+        cursor: pointer;
+    }
+
+    .profImgs:checked{
+        border: 4px solid var(--main-color);
+    }
+
+    .editInput{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        margin-bottom: 24px;
+        width: 70%;
     }
 
 /* ------------------------------------------------- */
@@ -265,17 +406,18 @@
 .full-screen{
     position: relative;
     width: 100%;
-    height: 95vh;
+    height: 100vh;
 }
 
 .full-info{
-    position: relative;
-    top: 11vh;
     z-index: 4;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    position: absolute;
+    top: 10vh;
+    left: 0;
     height: 180px;
     background: rgba(0, 0, 0, .8);
     padding: 12px;
@@ -296,13 +438,13 @@
     font-size: 1.5rem;
 }
 
-.player{
-    position: absolute;
-    top: 0;
+.filmsPage{
+    height: 400vh;
 }
 
 .film-list{
     position: relative;
+    top: -10vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
@@ -310,8 +452,9 @@
 }
 
 .card{
-    width: 90%;
-    margin: 0 5%;
+    position: relative;
+    justify-self: center;
+    width: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -323,11 +466,6 @@
     width: 100%;
     height: 60%;
     object-fit: fill;
-}
-
-.filmimg img{
-    width: 100%;
-    height: 100%;
 }
 
 .card h1{
@@ -367,8 +505,11 @@
 
 .tags li{
     color: var(--Neutrals800-color);
-    position: relative;
-    top: -60px;
+    position: absolute;
+    width: 500px;
+    top: 45%;
+    left: 28%;
+    margin-top: 12px;
     display: flex;
     gap: 40px;
 }
@@ -403,6 +544,10 @@
 
 @media (max-width: 1892px)
 {
+    .filmsPage{
+        height: 680vh;
+    }
+
     .film-list{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -414,6 +559,10 @@
 
 @media (max-width: 1758px)
 {
+    .filmsPage{
+        height: 660vh;
+    }
+
     .card{
         width: 520px;
     }
@@ -421,21 +570,64 @@
 
 @media (max-width: 1634px)
 {
+    .filmsPage{
+        height: 650vh;
+    }
+
     .card{
         width: 480px;
+    }
+
+    .tags li{
+        top: 35%;
+        left: 28%;
     }
 }
 
 /* McBook Pro Medias */
 @media (max-width: 1492px)
 {
+    .first-section h1{
+        left: 53%;
+    }
+    
+    .first-section p{
+        left: 53%;
+    }
+
+    .first-section img{
+        width: 1300px;
+        height: 700px;
+    }
+
+    .second-section p{
+        width: 500px;
+    }
+
+    .second-section img{
+        width: 1050px;
+    }
+
+    .filmsPage{
+        height: 630vh;
+    }
+
     .card{
         width: 430px;
+    }
+
+    .tags li{
+        top: 33%;
+        left: 20%;
     }
 }
 
 @media (max-width: 1380px)
 {
+    .filmsPage{
+        height: 920vh;
+    }
+
     .film-list{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -443,18 +635,61 @@
     .card{
         width: 600px;
     }
+
+    .tags li{
+        top: 43%;
+        left: 30%;
+    }
 }
 
 @media (max-width: 1246px)
 {
+    .filmsPage{
+        height: 740vh;
+    }
+
     .card{
         width: 520px;
+    }
+
+    .tags li{
+        top: 37%;
     }
 }
 
 /* Ipad Pro Medias */
 @media (max-width: 1024px) 
 {
+    .first-section{
+        width: 100%;
+        height: 90vh;
+    }
+    
+    .first-section h1{
+        top: 70%;
+        left: 25%;
+    }
+    
+    .first-section p{
+        top: 77%;
+        left: 25%;
+    }
+
+    .second-section{
+        height: 90vh;
+    }
+    
+    .second-section h1{
+        top: 20%;
+        left: 15%;
+    }
+    
+    .second-section p{
+        width: 750px;
+        top: 26%;
+        left: 15%;
+    }
+
     .footer{
         height: 400px;
     }
@@ -472,25 +707,53 @@
         margin: 20% auto 40%;
     }
 
+    .filmsPage{
+        height: 720vh;
+    }
+
     .card{
         width: 450px;
     }
 
-    .sections{
-        flex-direction: column;
-        margin: 0 24px;
+    .tags li{
+        top: 33%;
+        left: 20%;
     }
 }
 
 /* Ipad Mini Medias */
 @media (max-width: 770px) 
 {
+    .first-section h1{
+        top: 78%;
+        left: 25%;
+    }
+    
+    .first-section p{
+        top: 87%;
+        left: 25%;
+    }
+    .second-section h1{
+        top: 10%;
+        left: 15%;
+    }
+    
+    .second-section p{
+        width: 750px;
+        top: 18%;
+        left: 15%;
+    }
+
     .form-container{
         margin: 18% auto 5%;
     }
 
     .signin{
         margin: 20% auto 10%;
+    }
+
+    .filmsPage{
+        height: 1420vh;
     }
 
     .film-list{
@@ -511,13 +774,50 @@
     }
     
     .logo-navbar{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
     /* Home Styles */
     /* HeroBanner Styles */
     .herobanner h1{
-        font-size: 2.3rem;
+        font-size: 2rem;
+    }
+    
+    /* First Section Styles */
+    .first-section img{
+        width: 800px;
+        height: 450px;
+    }
+    
+    .first-section h1{
+        top: 68%;
+        left: 10%;
+        font-size: 1.7rem;
+    }
+    
+    .first-section p{
+        width: 650px;
+        top: 75%;
+        left: 10%;
+        font-size: 1rem;
+    }
+    
+    /* Second Section Styles */
+    .second-section img{
+        width: 600px;
+    }
+    
+    .second-section h1{
+        top: 30%;
+        left: 8%;
+        font-size: 1.7rem;
+    }
+    
+    .second-section p{
+        width: 350px;
+        top: 37%;
+        left: 8%;
+        font-size: 1rem;
     }
     
     /* Footer Styles */
@@ -540,10 +840,19 @@
         width: 140%;
     }
 
+    .filmsPage{
+        height: 1220vh;
+    }
+
     .card{
         width: 350px;
     }
 
+    .tags li{
+        top: 28%;
+        left: 15%;
+    }
+    
     .info{
         font-size: 1rem;
     }
@@ -554,19 +863,5 @@
     
     .full-screen p{
         font-size: 1rem;
-    }
-
-    .sections{
-        flex-direction: column;
-        margin: 0 24px;
-    }
-
-    .sections h1{
-        font-size: 1.7rem;
-    }
-
-    .sections p{
-        width: 85%;
-        font-size: 1.2rem;
     }
 }

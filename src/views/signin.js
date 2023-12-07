@@ -1,18 +1,36 @@
 // React Imports
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 // Components Imports
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
 
 // Function
-export default function Signup() {
-   // useNavigate Call
-   const navigate = useNavigate();
+export default function Signin() {
+    const navigate = useNavigate();
+    
+    const [values,setValues] = useState({
+        email: '',
+        password: '',
+    })
 
-    function signin() {
-        navigate("/films")
+    const handleValues = (event) => {
+        setValues(prev => ({...prev, [event.target.name]: event.target.value}));
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        axios.post('http://localhost:3001/signin', values, { withCredentials: true })
+            .then(res => {
+                navigate('/films');
+            })
+            .catch(err => {
+                console.log("AxiosFail", err);
+                alert("Usuario No Encontrado");
+            })
     }
 
     return (
@@ -22,11 +40,11 @@ export default function Signup() {
 
             {/* Form */}
             <div className="form-container signin">
-                <form>
-                    <input type="text" name="email" id="email" placeholder="Email"/>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" name="email" id="email" placeholder="Email" onChange={handleValues}/>
                     <label>*Recuerda que la contraseña debe: tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula*</label>
-                    <input type="password" name="password" id="password" placeholder="Contraseña"/>
-                    <button type="submit" className="btn btn-form" onClick={signin}>Iniciar Sesión</button>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" onChange={handleValues}/>
+                    <button type="submit" className="btn btn-form">Iniciar Sesión</button>
                 </form>
             </div>
 

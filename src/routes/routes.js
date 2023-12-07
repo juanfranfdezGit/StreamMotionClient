@@ -7,6 +7,7 @@ import Home from "../views/home"
 import Signup from "../views/signup"
 import Signin from "../views/signin"
 import Films from "../views/films";
+import User from "../views/edit";
 
 // Function
 export default function Pages() {
@@ -33,6 +34,11 @@ export default function Pages() {
             {/* Films Route */}
             <Routes>
                 <Route path="/films" element={<Films/>}></Route>
+            </Routes>
+
+            {/* User Route */}
+            <Routes>
+                <Route path="/user" element={<User/>}></Route>
             </Routes>
 
         </BrowserRouter>

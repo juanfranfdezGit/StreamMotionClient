@@ -1,8 +1,11 @@
 // React Imports
 import ReactPlayer from "react-player";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 // Components Imports
-import Navbar2 from "../components/navbar2"
 import Footer from "../components/footer"
 
 // Assets Imports
@@ -31,32 +34,80 @@ import playico from "../assets/playico.png"
 
 // Function
 export default function Films() {
+    // useNavigate Call
+    const navigate = useNavigate();
+
+    // Navigation Functions
+    function SingOut() {
+        try {
+            axios.post('http://localhost:3001/logout', {
+                method: 'POST',
+                withCredentials: true,
+            })
+            .then(() => navigate("/"));
+        } catch (error) {
+            console.error("Error during sign out:", error);
+        }
+    }
+
+    function Home() {
+        navigate("/films")
+    }
+
+    function Edit() {
+        navigate("/user")
+    }
+
+    // Estado y funcion para manejar el usuario
+    const [user, setUser] = useState([]);
+
+    // Recoge datos de nuestra base de datos
+    const getUser = async () => {
+        try {
+            const response = await axios.get('http://localhost:3001/films', {
+                method: 'GET',
+                withCredentials: true,
+            });
+
+            setUser(response.data);
+
+        } catch (error) {
+            console.error("Error al obtener datos del usuario:", error);
+    }}
+
+    // Ejecuta la funcion una vez montado nuestro componente
+    useEffect(() => getUser, []);
+
     return (
-        <div className="container">
-            {/* Navbar with close session button */}
-            <Navbar2/>
+        <div className="container filmsPage">
+            {/* Navbar with close session button and profImg */}
+            {
+            user.map((user) => (
+                <div className="navbar-container">
+                    <h1 className="logo-navbar" onClick={Home}>StreamMotion</h1>
+                    <div>
+                        <button className="btn" onClick={SingOut}>Cerrar Sesión</button>
+                        <div className={user.profIMG} onClick={Edit}/>
+                    </div>
+                </div>
+                ))
+            }
 
             {/* Trailer */}
             <div className="full-screen">
                 <div className="full-info">
-                    <div>
-                        <div className="full-title">
-                            <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full"/>
-                        </div>
-                        <p>En tiempos de guerra, el brillante físico estadounidense Julius Robert Oppenheimer, al frente del 'Proyecto Manhattan', lidera los ensayos nucleares para construir la bomba atómica para su país.</p>
+                    <div className="full-title">
+                        <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full"/>
                     </div>
+                    <p>En tiempos de guerra, el brillante físico estadounidense Julius Robert Oppenheimer, al frente del 'Proyecto Manhattan', lidera los ensayos nucleares para construir la bomba atómica para su país.</p>
                 </div>
-                <div className="player">
-                    <ReactPlayer url={trailer1} playing="true" muted="true" loop width="100vw" height="115vh"/>
-                </div>
+                <ReactPlayer url={trailer1} playing="true" muted="true" loop width="100vw" height="110vh"/>
             </div>
 
             {/* Cards */}
             <div className="film-list">
                 <div className="card">
-                    <div className="filmimg">
-                        <img src={esdla1} alt="esdla"/>
-                    </div>
+                    <img src={esdla1} alt="esdla" className="filmimg"/>
                     <div className="tags">
                         <li>
                             <ul>Fantasía</ul>
@@ -75,9 +126,7 @@ export default function Films() {
                 </div>
 
                 <div className="card">
-                    <div className="filmimg">
-                        <img src={esdla2} alt="esdla"/>
-                    </div>
+                    <img src={esdla2} alt="esdla" className="filmimg"/>
                     <div className="tags">
                         <li>
                             <ul>Fantasía</ul>
