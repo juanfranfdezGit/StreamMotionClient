@@ -40,7 +40,7 @@ export default function Films() {
     // Navigation Functions
     function SingOut() {
         try {
-            axios.post('http://localhost:3001/logout', {
+            axios.post('https://streammotionserver.onrender.com/logout', {
                 method: 'POST',
                 withCredentials: true,
             })
@@ -58,13 +58,17 @@ export default function Films() {
         navigate("/user")
     }
 
+    function Animation() {
+        navigate("/animation")
+    }
+
     // Estado y funcion para manejar el usuario
     const [user, setUser] = useState([]);
 
     // Recoge datos de nuestra base de datos
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/films', {
+            const response = await axios.get('https://streammotionserver.onrender.com/films', {
                 method: 'GET',
                 withCredentials: true,
             });
@@ -97,7 +101,7 @@ export default function Films() {
             <div className="full-screen">
                 <div className="full-info">
                     <div className="full-title">
-                        <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full"/>
+                        <h1>Oppenheimer</h1><img src={playico} alt="play" className="play full" onClick={Animation}/>
                     </div>
                     <p>En tiempos de guerra, el brillante físico estadounidense Julius Robert Oppenheimer, al frente del 'Proyecto Manhattan', lidera los ensayos nucleares para construir la bomba atómica para su país.</p>
                 </div>
@@ -122,7 +126,7 @@ export default function Films() {
                         <h2>3h 00min</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -141,7 +145,7 @@ export default function Films() {
                         <h2>2h 59min</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 
@@ -161,7 +165,7 @@ export default function Films() {
                         <h2>3h 01min</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -180,7 +184,7 @@ export default function Films() {
                         <h2>1h 53min</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -199,11 +203,11 @@ export default function Films() {
                         <h2>1h 34min</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
-                    <img src={naruto} alt="naruto" className="filmimg"/>
+                    <img src={naruto} alt="naruto" className="filmimg" />
                     <div className="tags">
                         <li>
                             <ul>Animación</ul>
@@ -218,7 +222,7 @@ export default function Films() {
                         <h2>502 Episodios</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -237,7 +241,7 @@ export default function Films() {
                         <h2>26 Episodios</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -256,7 +260,7 @@ export default function Films() {
                         <h2>2h 32mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -275,7 +279,7 @@ export default function Films() {
                         <h2>2h 34mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -294,7 +298,7 @@ export default function Films() {
                         <h2>2h 17mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -313,7 +317,7 @@ export default function Films() {
                         <h2>2h 37mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -332,7 +336,7 @@ export default function Films() {
                         <h2>2h 18mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -351,7 +355,7 @@ export default function Films() {
                         <h2>2h 33mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -370,7 +374,7 @@ export default function Films() {
                         <h2>2h 26mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -389,7 +393,7 @@ export default function Films() {
                         <h2>2h 10mins</h2>
                         <h2 className="quality">4K</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -408,7 +412,7 @@ export default function Films() {
                         <h2>1h 49mins</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -427,7 +431,7 @@ export default function Films() {
                         <h2>153 Episodios</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -446,7 +450,7 @@ export default function Films() {
                         <h2>153 Episodios</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -465,7 +469,7 @@ export default function Films() {
                         <h2>2h 01mins</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
                 <div className="card">
@@ -484,7 +488,7 @@ export default function Films() {
                         <h2>1h 28mins</h2>
                         <h2 className="quality">HD</h2>
                     </div>
-                    <img src={playico} alt="play" className="play"/>
+                    <img src={playico} alt="play" className="play" onClick={Animation}/>
                 </div>
 
             </div>

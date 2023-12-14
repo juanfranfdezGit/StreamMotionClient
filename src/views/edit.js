@@ -14,7 +14,7 @@ export default function User() {
      // Navigation Functions
     function SingOut() {
         try {
-            axios.post('http://localhost:3001/logout', {
+            axios.post('https://streammotionserver.onrender.com/logout', {
                 method: 'POST',
                 withCredentials: true,
             })
@@ -22,6 +22,19 @@ export default function User() {
         } catch (error) {
             console.error("Error during sign out:", error);
         }
+    }
+
+    function Delete() {
+        const confirm = window.confirm('¿Seguro que deseas eliminar su cuenta?')
+
+        if (confirm) {
+            try {
+                axios.post('https://streammotionserver.onrender.com/delete', {},{ withCredentials: true, })
+                .then(() => navigate("/"));
+            } catch (error) {
+                console.error("Error during delete:", error);
+            }
+        } 
     }
 
      function Edit() {
@@ -38,7 +51,7 @@ export default function User() {
      // Recoge datos de nuestra base de datos
      const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/edit', {
+            const response = await axios.get('https://streammotionserver.onrender.com/edit', {
                 method: 'GET',
                 withCredentials: true,
             });
@@ -68,7 +81,6 @@ export default function User() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(values)
         
         const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const password_pattern = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/; //
@@ -78,7 +90,7 @@ export default function User() {
         } else if (!values.password.match(password_pattern)) {
             alert("Introduzca una contraseña válida");
         } else {
-            axios.post('http://localhost:3001/edit', values, { withCredentials: true })
+            axios.post('https://streammotionserver.onrender.com/edit', values, { withCredentials: true })
             .then(res => {navigate('/films')})
             .catch(err => console.log("AxiosFail", err))
         }
@@ -114,6 +126,8 @@ export default function User() {
                             <input type="radio" name="profIMG" id="profIMG4" defaultValue="prof4" checked={values.profIMG === "prof4"} className="profImgs" onChange={handleValues}/>
                         </div>
                         <button type="submit" className="btn btn-form btn-edit">Cambiar Imagen</button>
+                        <div className="divider"></div>    
+                        <div className="btn btn-form btn-delete" onClick={Delete}>Eliminar mi Perfil</div>      
                     </form>
                     
                     </div>

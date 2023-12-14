@@ -70,14 +70,14 @@
         align-items: center;
         background: var(--main-color);
         color: var(--Neutrals100-color);
-        font-size: .8rem;
+        font-size: 1rem;
         font-weight: 700;
         box-shadow: 0 0 3px 2px var(--Neutrals800-color);
         margin-top: 8px;
     }
 
     .btn-form{
-        width: 150px;
+        width: 180px;
     }
 
     .btn:hover{
@@ -87,6 +87,24 @@
 
     .btn-edit{
         margin-bottom: 32px;
+    }
+
+    .btn-delete{
+        background: var(--Neutrals800-color);
+        color: var(--main-color);
+        box-shadow: none;
+    }
+
+    .btn-delete:hover{
+        text-shadow: 0 0 10px var(--main-color);
+    }
+
+    .divider{
+        width: 90%;
+        height: 8px;
+        background-color: var(--main-color);
+        border-radius: 50px;
+        margin: 40px;
     }
 
     /* Navbar Styles */
@@ -399,7 +417,7 @@
     }
 
 /* ------------------------------------------------- */
-/* films Medias */
+/* films Styles */
 /* ------------------------------------------------- */
 /* ------------------------------------------------- */
 
@@ -538,7 +556,81 @@
 }
 
 /* ------------------------------------------------- */
-/* Home Medias */
+/* films Styles */
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+
+.creditsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: var(--Neutrals800-color);
+}
+
+.creditVideo{
+    position: absolute;
+    width: 120vw;
+    height: 120vh;
+}
+
+.credits{
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 24px;
+    box-shadow: 0 10px 15px var(--main-color);
+    color: var(--Neutrals100-color);
+    animation: creditsScale 4s linear;
+}
+
+.credits h1{
+    font-size: 4rem;
+}
+
+.credits h1 span{
+    color: var(--main-color);
+}
+
+.credits h2{
+    font-size: 2rem;
+}
+
+.credits p{
+    font-size: 1.3rem;
+}
+
+.back-btn{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+}
+
+.back-btn img{
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 0.75rem crimson);
+}
+
+.back-btn:hover{
+    cursor: pointer;
+}
+
+/* ------------------------------------------------- */
+/* Medias */
 /* ------------------------------------------------- */
 /* ------------------------------------------------- */
 
@@ -864,4 +956,54 @@
     .full-screen p{
         font-size: 1rem;
     }
+
+    .credits{
+        width: 300px;
+    }
+    
+    .credits h1{
+        font-size: 2rem;
+    }
+    
+    .credits h1 span{
+        color: var(--main-color);
+    }
+    
+    .credits h2{
+        font-size: 1rem;
+    }
+    
+    .credits p{
+        font-size: .7rem;
+    }
 }
+
+/* ------------------------------------------------- */
+/* KeyFrames */
+/* ------------------------------------------------- */
+/* ------------------------------------------------- */
+@keyframes creditsScale {
+    0%{
+        top: 70vh;
+    }
+
+    20%{
+        top: 60vh;
+    }
+
+    40%{
+        top: 40vh;
+    }
+
+    60%{
+        top: 20vh;
+    }
+
+    80%{
+        top: 10vh;
+    }
+
+    100%{
+        top: 0;
+    }
+  }

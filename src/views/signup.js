@@ -34,7 +34,7 @@ export default function Signup() {
         } else if (values.profIMG[0] !== 'prof1' && values.profIMG[0] !== 'prof2' && values.profIMG[0] !== 'prof3' && values.profIMG[0] !== 'prof4') {
             alert("Seleccione una foto de perfil")
         } else {
-            axios.post('http://localhost:3001/signup', values)
+            axios.post('https://streammotionserver.onrender.com/signup', values)
             .then(res => {navigate('/')})
             .catch(err => console.log("AxiosFail", err))
         }
