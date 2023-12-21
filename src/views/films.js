@@ -40,7 +40,7 @@ export default function Films() {
     // Navigation Functions
     function SingOut() {
         try {
-            axios.post('https://pickle-tin-hugger.glitch.me//logout', {
+            axios.post('https://stump-keen-stinger.glitch.me/logout', {
                 method: 'POST',
                 withCredentials: true,
             })

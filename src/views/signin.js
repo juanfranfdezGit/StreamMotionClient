@@ -23,7 +23,7 @@ export default function Signin() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        axios.post('https://pickle-tin-hugger.glitch.me//signin', values, { withCredentials: true })
+        axios.post('https://stump-keen-stinger.glitch.me/signin', values, { withCredentials: true })
             .then(res => {
                 navigate('/films');
             })
