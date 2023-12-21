@@ -23,7 +23,7 @@ export default function Signin() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        axios.post('https://streammotionserver.onrender.com/signin', values, { withCredentials: true })
+        axios.post('streammotionserver.azurewebsites.net/signin', values, { withCredentials: true })
             .then(res => {
                 navigate('/films');
             })
