@@ -14,7 +14,7 @@ export default function User() {
      // Navigation Functions
     function SingOut() {
         try {
-            axios.post('streammotionserver.azurewebsites.net/logout', {
+            axios.post('https://pickle-tin-hugger.glitch.me//logout', {
                 method: 'POST',
                 withCredentials: true,
             })
@@ -29,7 +29,7 @@ export default function User() {
 
         if (confirm) {
             try {
-                axios.post('streammotionserver.azurewebsites.net/delete', {},{ withCredentials: true, })
+                axios.post('https://pickle-tin-hugger.glitch.me//delete', {},{ withCredentials: true, })
                 .then(() => navigate("/"));
             } catch (error) {
                 console.error("Error during delete:", error);
