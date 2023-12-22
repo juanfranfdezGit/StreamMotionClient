@@ -40,7 +40,7 @@ export default function Films() {
     // Navigation Functions
     function SingOut() {
         try {
-            axios.post('https://stump-keen-stinger.glitch.me/logout', {
+            axios.post('https://streammotionserver.onrender.com/logout', {
                 method: 'POST',
                 withCredentials: true,
             })
@@ -68,7 +68,7 @@ export default function Films() {
     // Recoge datos de nuestra base de datos
     const getUser = async () => {
         try {
-            const response = await axios.get('streammotionserver.azurewebsites.net/films', {
+            const response = await axios.get('https://streammotionserver.onrender.com/films', {
                 method: 'GET',
                 withCredentials: true,
             });

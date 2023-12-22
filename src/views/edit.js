@@ -14,7 +14,7 @@ export default function User() {
      // Navigation Functions
     function SingOut() {
         try {
-            axios.post('https://stump-keen-stinger.glitch.me/logout', {
+            axios.post('https://streammotionserver.onrender.com/logout', {
                 method: 'POST',
                 withCredentials: true,
             })
@@ -29,7 +29,7 @@ export default function User() {
 
         if (confirm) {
             try {
-                axios.post('https://stump-keen-stinger.glitch.me/delete', {},{ withCredentials: true, })
+                axios.post('https://streammotionserver.onrender.com/delete', {},{ withCredentials: true, })
                 .then(() => navigate("/"));
             } catch (error) {
                 console.error("Error during delete:", error);
@@ -51,7 +51,7 @@ export default function User() {
      // Recoge datos de nuestra base de datos
      const getUser = async () => {
         try {
-            const response = await axios.get('https://stump-keen-stinger.glitch.me/edit', {
+            const response = await axios.get('https://streammotionserver.onrender.com/edit', {
                 method: 'GET',
                 withCredentials: true,
             });
