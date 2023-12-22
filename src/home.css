@@ -268,8 +268,7 @@
     }
 
     .first-section img{
-        width: 2100px;
-        height: 1100px;
+        width: 90rem;
         filter: drop-shadow(0 5px 10px #292929);
     }
 
@@ -300,7 +299,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 1950px;
+        width: 80rem;
         filter: drop-shadow(0 0 25px #292929);
     }
 
